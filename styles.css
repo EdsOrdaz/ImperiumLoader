@@ -48,12 +48,8 @@
   user-select: none;
 }
 
-html {
-  background: transparent !important;
-}
-
 body {
-  background: transparent !important;
+  background-color: #000000 !important;
   color: var(--text-primary);
   min-height: 100vh;
   display: flex;
