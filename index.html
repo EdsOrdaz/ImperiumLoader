@@ -1,0 +1,1367 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Imperium Cheats Private Community - Visual Engine Configuration Interface">
+  <title>Imperium Cheats - Visual Engine</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Background design grid and glowing orbs -->
+  <div class="bg-grid"></div>
+  <div class="glow-orb orb-1"></div>
+  <div class="glow-orb orb-2"></div>
+
+  <!-- Main App Window -->
+  <div class="app-container" id="app-window">
+    
+    <!-- Sidebar (Left) -->
+    <aside class="sidebar">
+      <div class="logo-area">
+        <img src="logo.png" class="logo-icon" alt="Imperium Logo">
+        <div class="logo-text">
+          <h1>IMPERIUM <span>CHEATS</span></h1>
+          <p>PRIVATE COMMUNITY</p>
+        </div>
+      </div>
+
+      <nav class="nav-menu">
+        <button class="nav-item active" data-tab="visuals" id="btn-visuals">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+            <circle cx="12" cy="12" r="3"/>
+          </svg>
+          <div class="nav-label">
+            <span class="title">Visuals</span>
+            <span class="desc">Player & World ESP</span>
+          </div>
+        </button>
+
+        <button class="nav-item" data-tab="aimbot" id="btn-aimbot">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M12 2v4M12 18v4M2 12h4M18 12h4M12 9a3 3 0 100 6 3 3 0 000-6z"/>
+          </svg>
+          <div class="nav-label">
+            <span class="title">Aimbot</span>
+            <span class="desc">Combat assistance</span>
+          </div>
+        </button>
+
+        <button class="nav-item" data-tab="radar" id="btn-radar">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
+            <path d="M2 12h20"/>
+          </svg>
+          <div class="nav-label">
+            <span class="title">Radar</span>
+            <span class="desc">Internal 2D Map</span>
+          </div>
+        </button>
+
+        <button class="nav-item" data-tab="players" id="btn-players">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="8" y1="6" x2="21" y2="6"/>
+            <line x1="8" y1="12" x2="21" y2="12"/>
+            <line x1="8" y1="18" x2="21" y2="18"/>
+            <line x1="3" y1="6" x2="3.01" y2="6"/>
+            <line x1="3" y1="12" x2="3.01" y2="12"/>
+            <line x1="3" y1="18" x2="3.01" y2="18"/>
+          </svg>
+          <div class="nav-label">
+            <span class="title">Players</span>
+            <span class="desc">Players List</span>
+          </div>
+        </button>
+
+        <button class="nav-item" data-tab="loot" id="btn-loot">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/>
+            <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+            <line x1="12" y1="22.08" x2="12" y2="12"/>
+          </svg>
+          <div class="nav-label">
+            <span class="title">Loot</span>
+            <span class="desc">Items & Objects</span>
+          </div>
+        </button>
+
+        <button class="nav-item" data-tab="settings" id="btn-settings">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="4" y1="21" x2="4" y2="14"/>
+            <line x1="4" y1="10" x2="4" y2="3"/>
+            <line x1="12" y1="21" x2="12" y2="12"/>
+            <line x1="12" y1="8" x2="12" y2="3"/>
+            <line x1="20" y1="21" x2="20" y2="16"/>
+            <line x1="20" y1="12" x2="20" y2="3"/>
+            <line x1="1" y1="14" x2="7" y2="14"/>
+            <line x1="9" y1="8" x2="15" y2="8"/>
+            <line x1="17" y1="16" x2="23" y2="16"/>
+          </svg>
+          <div class="nav-label">
+            <span class="title">Settings</span>
+            <span class="desc">Config & Menu</span>
+          </div>
+        </button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="platform-badge">
+          <span class="pulse-indicator"></span>
+          <svg class="steam-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 .002c-4.887 0-9.083 2.94-10.875 7.108l6.398 2.64A4.321 4.321 0 0 1 11.5 9.25c2.19 0 3.992 1.637 4.28 3.755l6.576 2.715c.677-1.12 1.07-2.427 1.07-3.82 0-5.836-5.116-10.9-11.426-10.9zm-4.7 10.963a.8.8 0 0 0-.27.043l-4.13 1.706a5.538 5.538 0 0 0-.15 1.258c0 3.03 2.453 5.485 5.485 5.485.498 0 .978-.066 1.433-.193l2.846 1.176a2.433 2.433 0 0 0 2.215-3.376l-2.617-1.082a5.448 5.448 0 0 0-.083-.711 5.487 5.487 0 0 0-4.78-4.306zm0 2.378c1.332 0 2.41 1.078 2.41 2.41 0 1.33-1.078 2.41-2.41 2.41-1.332 0-2.41-1.08-2.41-2.41 0-1.332 1.078-2.41 2.41-2.41zm0 .74c.92 0 1.67.75 1.67 1.67 0 .92-.75 1.67-1.67 1.67s-1.67-.75-1.67-1.67c0-.92.75-1.67 1.67-1.67z"/>
+          </svg>
+          <span class="platform-text">PLATFORM | <span class="white-text">STEAM</span></span>
+        </div>
+        <div class="build-info">
+          BUILD <span class="divider">|</span> v2.4.1 <span class="divider">|</span> APR 2026
+        </div>
+      </div>
+    </aside>
+
+    <!-- Configuration Panel (Center) -->
+    <main class="config-panel">
+      <!-- Visuals Tab Content -->
+      <section class="tab-content active" id="tab-visuals">
+        <!-- Sub-header: ESP -->
+        <div class="panel-section-header">
+          <div class="header-line"></div>
+          <h2 class="section-title">ESP</h2>
+        </div>
+        
+        <div class="settings-group">
+          <label class="checkbox-container">
+            <input type="checkbox" id="chk-enable-esp" checked>
+            <span class="checkmark">
+              <svg class="check-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </span>
+            <div class="checkbox-label">
+              <span class="setting-name">Enable ESP</span>
+              <span class="setting-desc">Enables enemy visualization on screen.</span>
+            </div>
+          </label>
+        </div>
+
+        <!-- Sub-header: VISUALS -->
+        <div class="panel-section-header">
+          <div class="header-line"></div>
+          <h2 class="section-title">VISUALS</h2>
+        </div>
+
+        <div class="settings-group">
+          <!-- Box Checkbox -->
+          <label class="checkbox-container">
+            <input type="checkbox" id="chk-box">
+            <span class="checkmark">
+              <svg class="check-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </span>
+            <div class="checkbox-label">
+              <span class="setting-name">Box</span>
+              <span class="setting-desc">Draws a box around enemies.</span>
+            </div>
+          </label>
+
+          <!-- Skeleton Checkbox (Checked by default) -->
+          <label class="checkbox-container">
+            <input type="checkbox" id="chk-skeleton" checked>
+            <span class="checkmark">
+              <svg class="check-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </span>
+            <div class="checkbox-label">
+              <span class="setting-name">Skeleton</span>
+              <span class="setting-desc">Draws the enemy skeleton.</span>
+            </div>
+          </label>
+
+          <!-- Sub-options for Skeleton (Indented) -->
+          <div class="sub-options" id="skeleton-options">
+            <!-- Head Circle Checkbox (Checked by default) -->
+            <label class="checkbox-container">
+              <input type="checkbox" id="chk-head-circle" checked>
+              <span class="checkmark">
+                <svg class="check-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </span>
+              <div class="checkbox-label">
+                <span class="setting-name">Head Circle</span>
+                <span class="setting-desc">Draws a circle on the enemy head.</span>
+              </div>
+            </label>
+
+            <!-- Skeleton Thickness Slider -->
+            <div class="slider-container">
+              <div class="slider-label-row">
+                <span class="slider-title">Skeleton Thickness</span>
+                <span class="slider-value" id="val-skeleton-thickness">0.5</span>
+              </div>
+              <span class="slider-desc">Thickness of the skeleton lines.</span>
+              <div class="slider-wrapper">
+                <input type="range" id="sld-skeleton-thickness" min="0.1" max="3" step="0.1" value="0.5">
+              </div>
+            </div>
+          </div>
+
+          <!-- Health Bar Checkbox -->
+          <label class="checkbox-container">
+            <input type="checkbox" id="chk-health-bar" checked>
+            <span class="checkmark">
+              <svg class="check-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </span>
+            <div class="checkbox-label">
+              <span class="setting-name">Health Bar</span>
+              <span class="setting-desc">Shows the enemy health status bar.</span>
+            </div>
+          </label>
+
+          <!-- Ping Checkbox -->
+          <label class="checkbox-container">
+            <input type="checkbox" id="chk-ping" checked>
+            <span class="checkmark">
+              <svg class="check-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </span>
+            <div class="checkbox-label">
+              <span class="setting-name">Ping</span>
+              <span class="setting-desc">Shows the enemy ping.</span>
+            </div>
+          </label>
+
+          <!-- Rank Checkbox -->
+          <label class="checkbox-container">
+            <input type="checkbox" id="chk-rank" checked>
+            <span class="checkmark">
+              <svg class="check-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </span>
+            <div class="checkbox-label">
+              <span class="setting-name">Rank</span>
+              <span class="setting-desc">Shows the enemy rank.</span>
+            </div>
+          </label>
+
+          <!-- Prestige Checkbox -->
+          <label class="checkbox-container">
+            <input type="checkbox" id="chk-prestige">
+            <span class="checkmark">
+              <svg class="check-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </span>
+            <div class="checkbox-label">
+              <span class="setting-name">Prestige</span>
+              <span class="setting-desc">Shows the enemy prestige.</span>
+            </div>
+          </label>
+
+          <!-- Name Checkbox -->
+          <label class="checkbox-container">
+            <input type="checkbox" id="chk-name" checked>
+            <span class="checkmark">
+              <svg class="check-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </span>
+            <div class="checkbox-label">
+              <span class="setting-name">Name</span>
+              <span class="setting-desc">Shows the enemy name.</span>
+            </div>
+          </label>
+
+          <!-- Sub-options for Name (Indented) -->
+          <div class="sub-options" id="name-options">
+            <label class="checkbox-container">
+              <input type="checkbox" id="chk-team-id" checked>
+              <span class="checkmark">
+                <svg class="check-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </span>
+              <div class="checkbox-label">
+                <span class="setting-name">Team ID</span>
+                <span class="setting-desc">Shows the enemy team identifier.</span>
+              </div>
+            </label>
+
+            <label class="checkbox-container">
+              <input type="checkbox" id="chk-colored-names" checked>
+              <span class="checkmark">
+                <svg class="check-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </span>
+              <div class="checkbox-label">
+                <span class="setting-name">Colored Names</span>
+                <span class="setting-desc">Shows names with unique colors per player.</span>
+              </div>
+            </label>
+          </div>
+
+          <!-- Weapon Checkbox -->
+          <label class="checkbox-container">
+            <input type="checkbox" id="chk-weapon" checked>
+            <span class="checkmark">
+              <svg class="check-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </span>
+            <div class="checkbox-label">
+              <span class="setting-name">Weapon</span>
+              <span class="setting-desc">Shows the enemy equipped weapon.</span>
+            </div>
+          </label>
+
+          <!-- Distance Checkbox -->
+          <label class="checkbox-container">
+            <input type="checkbox" id="chk-distance" checked>
+            <span class="checkmark">
+              <svg class="check-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </span>
+            <div class="checkbox-label">
+              <span class="setting-name">Distance</span>
+              <span class="setting-desc">Shows the distance to the enemy.</span>
+            </div>
+          </label>
+
+          <!-- Teammates Checkbox -->
+          <label class="checkbox-container">
+            <input type="checkbox" id="chk-teammates">
+            <span class="checkmark">
+              <svg class="check-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </span>
+            <div class="checkbox-label">
+              <span class="setting-name">Teammates</span>
+              <span class="setting-desc">Shows ESP on teammates.</span>
+            </div>
+          </label>
+
+          <!-- Spectators Checkbox -->
+          <label class="checkbox-container">
+            <input type="checkbox" id="chk-spectators" checked>
+            <span class="checkmark">
+              <svg class="check-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </span>
+            <div class="checkbox-label">
+              <span class="setting-name">Spectators</span>
+              <span class="setting-desc">Shows how many players are spectating you.</span>
+            </div>
+          </label>
+
+          <!-- Sub-options for Spectators (Indented) -->
+          <div class="sub-options" id="spectator-options">
+            <div class="slider-container">
+              <div class="slider-label-row">
+                <span class="slider-title">Position X</span>
+                <span class="slider-value" id="val-spectator-pos-x">0.5</span>
+              </div>
+              <span class="slider-desc">Horizontal position of the spectator counter.</span>
+              <div class="slider-wrapper">
+                <input type="range" id="sld-spectator-pos-x" min="0.0" max="1.0" step="0.01" value="0.5">
+              </div>
+            </div>
+
+            <div class="slider-container">
+              <div class="slider-label-row">
+                <span class="slider-title">Position Y</span>
+                <span class="slider-value" id="val-spectator-pos-y">0.1</span>
+              </div>
+              <span class="slider-desc">Vertical position of the spectator counter.</span>
+              <div class="slider-wrapper">
+                <input type="range" id="sld-spectator-pos-y" min="0.0" max="1.0" step="0.01" value="0.1">
+              </div>
+            </div>
+          </div>
+
+          <!-- Input Device Checkbox -->
+          <label class="checkbox-container">
+            <input type="checkbox" id="chk-input-device" checked>
+            <span class="checkmark">
+              <svg class="check-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </span>
+            <div class="checkbox-label">
+              <span class="setting-name">Input Device</span>
+              <span class="setting-desc">Shows if the enemy uses keyboard or controller.</span>
+            </div>
+          </label>
+
+          <!-- Offscreen Arrow Checkbox -->
+          <label class="checkbox-container">
+            <input type="checkbox" id="chk-offscreen-arrow" checked>
+            <span class="checkmark">
+              <svg class="check-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </span>
+            <div class="checkbox-label">
+              <span class="setting-name">Offscreen Arrow</span>
+              <span class="setting-desc">Indicates the direction of offscreen enemies.</span>
+            </div>
+          </label>
+
+          <!-- Sub-options for Offscreen Arrow (Indented) -->
+          <div class="sub-options" id="arrow-options">
+            <div class="slider-container">
+              <div class="slider-label-row">
+                <span class="slider-title">Arrow Radius</span>
+                <span class="slider-value" id="val-arrow-radius">200.0</span>
+              </div>
+              <span class="slider-desc">Distance from center to the arrow edge.</span>
+              <div class="slider-wrapper">
+                <input type="range" id="sld-arrow-radius" min="50" max="400" step="5" value="200">
+              </div>
+            </div>
+          </div>
+
+          <!-- Snaplines Checkbox -->
+          <label class="checkbox-container">
+            <input type="checkbox" id="chk-snaplines">
+            <span class="checkmark">
+              <svg class="check-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </span>
+            <div class="checkbox-label">
+              <span class="setting-name">Snaplines</span>
+              <span class="setting-desc">Draws lines from your position to enemies.</span>
+            </div>
+          </label>
+        </div>
+
+        <!-- Section: SETTINGS -->
+        <div class="panel-section-header">
+          <div class="header-line"></div>
+          <h2 class="section-title">SETTINGS</h2>
+        </div>
+
+        <div class="settings-group">
+          <!-- Font Size Slider -->
+          <div class="slider-container">
+            <div class="slider-label-row">
+              <span class="slider-title">Font Size</span>
+              <span class="slider-value" id="val-esp-font-size">10.0</span>
+            </div>
+            <span class="slider-desc">Size of the ESP text.</span>
+            <div class="slider-wrapper">
+              <input type="range" id="sld-esp-font-size" min="6" max="24" step="0.5" value="10">
+            </div>
+          </div>
+
+          <!-- Max Distance Slider -->
+          <div class="slider-container">
+            <div class="slider-label-row">
+              <span class="slider-title">Max Distance</span>
+              <span class="slider-value" id="val-esp-max-dist">1000m</span>
+            </div>
+            <span class="slider-desc">Maximum ESP render distance.</span>
+            <div class="slider-wrapper">
+              <input type="range" id="sld-esp-max-dist" min="50" max="2000" step="50" value="1000">
+            </div>
+          </div>
+        </div>
+
+        <!-- Section: COLORS -->
+        <div class="panel-section-header">
+          <div class="header-line"></div>
+          <h2 class="section-title">COLORS</h2>
+        </div>
+
+        <div class="settings-group">
+          <!-- Text Color Picker -->
+          <div class="color-picker-container">
+            <div class="color-picker-label">
+              <span class="setting-name">Text Color</span>
+              <span class="setting-desc">Color of the ESP text.</span>
+            </div>
+            <div class="color-picker-wrapper" id="color-wrapper-text">
+              <input type="color" id="col-text-color" value="#ffffff">
+            </div>
+          </div>
+
+          <!-- Visible Enemy Color Picker -->
+          <div class="color-picker-container">
+            <div class="color-picker-label">
+              <span class="setting-name">Visible Enemy</span>
+              <span class="setting-desc">Color of the enemy when in line of sight.</span>
+            </div>
+            <div class="color-picker-wrapper" id="color-wrapper-visible">
+              <input type="color" id="col-visible-enemy" value="#a855f7">
+            </div>
+          </div>
+
+          <!-- Hidden Enemy Color Picker -->
+          <div class="color-picker-container">
+            <div class="color-picker-label">
+              <span class="setting-name">Hidden Enemy</span>
+              <span class="setting-desc">Color of the enemy when behind cover.</span>
+            </div>
+            <div class="color-picker-wrapper checkered" id="color-wrapper-hidden">
+              <input type="color" id="col-hidden-enemy" value="#888888">
+            </div>
+          </div>
+
+          <!-- Downed Enemy Color Picker -->
+          <div class="color-picker-container">
+            <div class="color-picker-label">
+              <span class="setting-name">Downed Enemy</span>
+              <span class="setting-desc">Color of the enemy when downed.</span>
+            </div>
+            <div class="color-picker-wrapper" id="color-wrapper-downed">
+              <input type="color" id="col-downed-enemy" value="#ffa500">
+            </div>
+          </div>
+
+          <!-- Teammates Color Picker -->
+          <div class="color-picker-container">
+            <div class="color-picker-label">
+              <span class="setting-name">Teammates</span>
+              <span class="setting-desc">Color of teammates.</span>
+            </div>
+            <div class="color-picker-wrapper" id="color-wrapper-teammates">
+              <input type="color" id="col-teammates" value="#00bfff">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Aimbot Tab Content -->
+      <section class="tab-content" id="tab-aimbot">
+        <!-- Section: AIMBOT -->
+        <div class="panel-section-header">
+          <div class="header-line"></div>
+          <h2 class="section-title">AIMBOT</h2>
+        </div>
+        
+        <div class="settings-group">
+          <label class="checkbox-container">
+            <input type="checkbox" id="chk-enable-aimbot">
+            <span class="checkmark">
+              <svg class="check-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </span>
+            <div class="checkbox-label">
+              <span class="setting-name">Enable Aimbot</span>
+              <span class="setting-desc">Enables the automatic aim assistant.</span>
+            </div>
+          </label>
+        </div>
+
+        <!-- Section: TARGET -->
+        <div class="panel-section-header">
+          <div class="header-line"></div>
+          <h2 class="section-title">TARGET</h2>
+        </div>
+
+        <div class="settings-group">
+          <!-- Input Mode Select -->
+          <div class="select-container">
+            <span class="select-title">Input Mode</span>
+            <span class="select-desc">Selects the input device for the aimbot.</span>
+            <select id="sel-aimbot-input-mode" class="custom-select">
+              <option value="mouse" selected>Mouse</option>
+              <option value="controller">Controller</option>
+            </select>
+          </div>
+
+          <!-- Primary Key Bind -->
+          <div class="keybind-container">
+            <div class="keybind-label">
+              <span class="setting-name">Primary Key</span>
+              <span class="setting-desc">Key to activate the aimbot.</span>
+            </div>
+            <button class="keybind-btn" id="btn-aimbot-primary-key">Mouse Right</button>
+          </div>
+
+          <!-- Secondary Key Bind -->
+          <div class="keybind-container">
+            <div class="keybind-label">
+              <span class="setting-name">Secondary Key</span>
+              <span class="setting-desc">Secondary key to activate the aimbot.</span>
+            </div>
+            <button class="keybind-btn" id="btn-aimbot-secondary-key">Mouse Left</button>
+          </div>
+
+          <!-- Target Bone Select -->
+          <div class="select-container">
+            <span class="select-title">Target Bone</span>
+            <span class="select-desc">Selects the aim point on the enemy.</span>
+            <select id="sel-aimbot-bone" class="custom-select">
+              <option value="smart" selected>Smart</option>
+              <option value="head">Head</option>
+              <option value="neck">Neck</option>
+              <option value="chest">Chest</option>
+              <option value="pelvis">Pelvis</option>
+            </select>
+          </div>
+
+          <!-- Block on Spectator Checkbox -->
+          <label class="checkbox-container">
+            <input type="checkbox" id="chk-aimbot-block-spectator">
+            <span class="checkmark">
+              <svg class="check-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </span>
+            <div class="checkbox-label">
+              <span class="setting-name">Block on Spectator</span>
+              <span class="setting-desc">Disables aimbot when someone is spectating you.</span>
+            </div>
+          </label>
+
+          <!-- Visible Only Checkbox -->
+          <label class="checkbox-container">
+            <input type="checkbox" id="chk-aimbot-visible-only" checked>
+            <span class="checkmark">
+              <svg class="check-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </span>
+            <div class="checkbox-label">
+              <span class="setting-name">Visible Only</span>
+              <span class="setting-desc">Only aims at enemies that are in line of sight.</span>
+            </div>
+          </label>
+
+          <!-- Ignore Downed Checkbox -->
+          <label class="checkbox-container">
+            <input type="checkbox" id="chk-aimbot-ignore-downed" checked>
+            <span class="checkmark">
+              <svg class="check-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </span>
+            <div class="checkbox-label">
+              <span class="setting-name">Ignore Downed</span>
+              <span class="setting-desc">Ignores enemies that are downed.</span>
+            </div>
+          </label>
+
+          <!-- Smoothness Slider -->
+          <div class="slider-container">
+            <div class="slider-label-row">
+              <span class="slider-title">Smoothness</span>
+              <span class="slider-value" id="val-aimbot-smoothness">0.15</span>
+            </div>
+            <span class="slider-desc">Interpolation speed of the aim movement.</span>
+            <div class="slider-wrapper">
+              <input type="range" id="sld-aimbot-smoothness" min="0.01" max="1.00" step="0.01" value="0.15">
+            </div>
+          </div>
+
+          <!-- Max Distance Slider -->
+          <div class="slider-container">
+            <div class="slider-label-row">
+              <span class="slider-title">Max Distance</span>
+              <span class="slider-value" id="val-aimbot-max-dist">500m</span>
+            </div>
+            <span class="slider-desc">Maximum distance at which the aimbot will act.</span>
+            <div class="slider-wrapper">
+              <input type="range" id="sld-aimbot-max-dist" min="50" max="1000" step="50" value="500">
+            </div>
+          </div>
+        </div>
+
+        <!-- Section: HUMANIZER -->
+        <div class="panel-section-header">
+          <div class="header-line"></div>
+          <h2 class="section-title">HUMANIZER</h2>
+        </div>
+
+        <div class="settings-group">
+          <!-- Humanizer Checkbox -->
+          <label class="checkbox-container">
+            <input type="checkbox" id="chk-aimbot-humanizer" checked>
+            <span class="checkmark">
+              <svg class="check-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </span>
+            <div class="checkbox-label">
+              <span class="setting-name">Humanizer</span>
+              <span class="setting-desc">Applies natural movements to the aim.</span>
+            </div>
+          </label>
+
+          <!-- Sub-options for Humanizer -->
+          <div class="sub-options" id="humanizer-options">
+            <!-- Flick Intensity Slider -->
+            <div class="slider-container">
+              <div class="slider-label-row">
+                <span class="slider-title">Flick Intensity</span>
+                <span class="slider-value" id="val-aimbot-flick-intensity">1.0</span>
+              </div>
+              <span class="slider-desc">Intensity of the fast aim movement.</span>
+              <div class="slider-wrapper">
+                <input type="range" id="sld-aimbot-flick-intensity" min="0.1" max="3.0" step="0.1" value="1.0">
+              </div>
+            </div>
+
+            <!-- Pulse Intensity Slider -->
+            <div class="slider-container">
+              <div class="slider-label-row">
+                <span class="slider-title">Pulse Intensity</span>
+                <span class="slider-value" id="val-aimbot-pulse-intensity">1.0</span>
+              </div>
+              <span class="slider-desc">Intensity of the micro-variation in aim.</span>
+              <div class="slider-wrapper">
+                <input type="range" id="sld-aimbot-pulse-intensity" min="0.1" max="3.0" step="0.1" value="1.0">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section: FIELD OF VIEW -->
+        <div class="panel-section-header">
+          <div class="header-line"></div>
+          <h2 class="section-title">FIELD OF VIEW</h2>
+        </div>
+
+        <div class="settings-group">
+          <!-- Show FOV Checkbox -->
+          <label class="checkbox-container">
+            <input type="checkbox" id="chk-aimbot-show-fov" checked>
+            <span class="checkmark">
+              <svg class="check-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </span>
+            <div class="checkbox-label">
+              <span class="setting-name">Show FOV</span>
+              <span class="setting-desc">Draws the aimbot field of view circle.</span>
+            </div>
+          </label>
+
+          <!-- Sub-options for FOV -->
+          <div class="sub-options" id="fov-options">
+            <!-- FOV Radius Slider -->
+            <div class="slider-container">
+              <div class="slider-label-row">
+                <span class="slider-title">FOV Radius</span>
+                <span class="slider-value" id="val-aimbot-fov-radius">50</span>
+              </div>
+              <span class="slider-desc">Size of the aimbot field of view.</span>
+              <div class="slider-wrapper">
+                <input type="range" id="sld-aimbot-fov-radius" min="10" max="300" step="5" value="50">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Radar Tab Content -->
+      <section class="tab-content" id="tab-radar">
+        <!-- Sub-header: RADAR -->
+        <div class="panel-section-header">
+          <div class="header-line"></div>
+          <h2 class="section-title">RADAR</h2>
+        </div>
+        
+        <div class="settings-group">
+          <!-- Enable Radar Checkbox -->
+          <label class="checkbox-container">
+            <input type="checkbox" id="chk-enable-radar" checked>
+            <span class="checkmark">
+              <svg class="check-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </span>
+            <div class="checkbox-label">
+              <span class="setting-name">Enable Radar</span>
+              <span class="setting-desc">Enables the on-screen radar.</span>
+            </div>
+          </label>
+        </div>
+
+        <!-- Sub-header: CONFIGURATION -->
+        <div class="panel-section-header">
+          <div class="header-line"></div>
+          <h2 class="section-title">CONFIGURATION</h2>
+        </div>
+
+        <div class="settings-group">
+          <!-- Mini UAV Checkbox -->
+          <label class="checkbox-container">
+            <input type="checkbox" id="chk-mini-uav" checked>
+            <span class="checkmark">
+              <svg class="check-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </span>
+            <div class="checkbox-label">
+              <span class="setting-name">Mini UAV</span>
+              <span class="setting-desc">Shows the minimap with enemy positions.</span>
+            </div>
+          </label>
+
+          <!-- Advanced UAV Checkbox -->
+          <label class="checkbox-container">
+            <input type="checkbox" id="chk-advanced-uav" checked>
+            <span class="checkmark">
+              <svg class="check-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </span>
+            <div class="checkbox-label">
+              <span class="setting-name">Advanced UAV</span>
+              <span class="setting-desc">Shows enemy positions with advanced data.</span>
+            </div>
+          </label>
+        </div>
+
+        <!-- Sub-header: UAV Live -->
+        <div class="panel-section-header">
+          <div class="header-line"></div>
+          <h2 class="section-title">UAV Live</h2>
+        </div>
+
+        <div class="settings-group">
+          <!-- Share UAV Checkbox -->
+          <label class="checkbox-container">
+            <input type="checkbox" id="chk-share-uav" checked>
+            <span class="checkmark">
+              <svg class="check-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </span>
+            <div class="checkbox-label">
+              <span class="setting-name">Share UAV</span>
+              <span class="setting-desc">Stream radar to browser via QR code.</span>
+            </div>
+          </label>
+
+          <!-- QR Code container -->
+          <div class="qrcode-wrapper-container" id="share-uav-options">
+            <div id="qrcode-container"></div>
+            <div class="qr-id-badge">ID: <span id="lbl-qr-id">a7soi12AnvZBxO...</span></div>
+            <button class="action-btn" id="btn-copy-qr-link" style="width: 100%; max-width: 200px; margin-top: 4px;">Copy Link</button>
+          </div>
+
+          <!-- Radar Shape Dropdown -->
+          <div class="select-container">
+            <span class="select-title">Radar Shape</span>
+            <span class="select-desc">Switches the radar shape between circle and square.</span>
+            <select id="sel-radar-shape" class="custom-select">
+              <option value="circle">Circle</option>
+              <option value="square" selected>Square</option>
+            </select>
+          </div>
+
+          <!-- Position X Slider -->
+          <div class="slider-container">
+            <div class="slider-label-row">
+              <span class="slider-title">Position X</span>
+              <span class="slider-value" id="val-radar-pos-x">36</span>
+            </div>
+            <span class="slider-desc">Horizontal position of the radar on screen.</span>
+            <div class="slider-wrapper">
+              <input type="range" id="sld-radar-pos-x" min="0" max="100" step="1" value="36">
+            </div>
+          </div>
+
+          <!-- Position Y Slider -->
+          <div class="slider-container">
+            <div class="slider-label-row">
+              <span class="slider-title">Position Y</span>
+              <span class="slider-value" id="val-radar-pos-y">19</span>
+            </div>
+            <span class="slider-desc">Vertical position of the radar on screen.</span>
+            <div class="slider-wrapper">
+              <input type="range" id="sld-radar-pos-y" min="0" max="100" step="1" value="19">
+            </div>
+          </div>
+        </div>
+
+        <!-- Sub-header: VISUALIZATION -->
+        <div class="panel-section-header">
+          <div class="header-line"></div>
+          <h2 class="section-title">VISUALIZATION</h2>
+        </div>
+
+        <div class="settings-group">
+          <!-- Radar Background Checkbox -->
+          <label class="checkbox-container">
+            <input type="checkbox" id="chk-radar-background" checked>
+            <span class="checkmark">
+              <svg class="check-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </span>
+            <div class="checkbox-label">
+              <span class="setting-name">Radar Background</span>
+              <span class="setting-desc">Draws the background of the radar field.</span>
+            </div>
+          </label>
+
+          <!-- Radar Lines Checkbox -->
+          <label class="checkbox-container">
+            <input type="checkbox" id="chk-radar-lines" checked>
+            <span class="checkmark">
+              <svg class="check-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </span>
+            <div class="checkbox-label">
+              <span class="setting-name">Radar Lines</span>
+              <span class="setting-desc">Shows the central axis guides.</span>
+            </div>
+          </label>
+
+          <!-- Background Color Picker -->
+          <div class="color-picker-container">
+            <div class="color-picker-label">
+              <span class="setting-name">Background Color</span>
+              <span class="setting-desc">Color of the radar field.</span>
+            </div>
+            <div class="color-picker-wrapper checkered" id="color-wrapper-radar-bg">
+              <input type="color" id="col-radar-bg" value="#07080b">
+            </div>
+          </div>
+
+          <!-- Lines Color Picker -->
+          <div class="color-picker-container">
+            <div class="color-picker-label">
+              <span class="setting-name">Lines Color</span>
+              <span class="setting-desc">Color of the borders and central axes.</span>
+            </div>
+            <div class="color-picker-wrapper checkered" id="color-wrapper-radar-lines">
+              <input type="color" id="col-radar-lines" value="#ffffff">
+            </div>
+          </div>
+
+          <!-- Visible Enemy Color Picker -->
+          <div class="color-picker-container">
+            <div class="color-picker-label">
+              <span class="setting-name">Visible Enemy</span>
+              <span class="setting-desc">Color of the enemy when in line of sight (LoS).</span>
+            </div>
+            <div class="color-picker-wrapper" id="color-wrapper-radar-visible">
+              <input type="color" id="col-radar-visible" value="#ff0000">
+            </div>
+          </div>
+
+          <!-- Hidden Enemy Color Picker -->
+          <div class="color-picker-container">
+            <div class="color-picker-label">
+              <span class="setting-name">Hidden Enemy</span>
+              <span class="setting-desc">Color of the enemy when behind cover.</span>
+            </div>
+            <div class="color-picker-wrapper" id="color-wrapper-radar-hidden">
+              <input type="color" id="col-radar-hidden" value="#00ff00">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Players Tab Content -->
+      <section class="tab-content" id="tab-players">
+        <div class="panel-section-header">
+          <div class="header-line"></div>
+          <h2 class="section-title">LOBBY PLAYERS</h2>
+        </div>
+
+        <div class="settings-group">
+          <div class="search-box-container">
+            <input type="text" id="txt-player-search" class="search-input" placeholder="Buscar jugador por nombre...">
+            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"/>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+          </div>
+
+          <div class="table-container">
+            <table class="players-table">
+              <thead>
+                <tr>
+                  <th>JUGADOR</th>
+                  <th>TEAM</th>
+                  <th>DIST.</th>
+                  <th>ARMA</th>
+                  <th>ACCION</th>
+                </tr>
+              </thead>
+              <tbody id="players-list-body">
+                <!-- Will be populated dynamically via JavaScript -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- Loot Tab Content -->
+      <section class="tab-content" id="tab-loot">
+        <!-- Sub-header: LOOT -->
+        <div class="panel-section-header">
+          <div class="header-line"></div>
+          <h2 class="section-title">LOOT</h2>
+        </div>
+        
+        <div class="settings-group">
+          <label class="checkbox-container">
+            <input type="checkbox" id="chk-enable-loot" checked>
+            <span class="checkmark">
+              <svg class="check-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </span>
+            <div class="checkbox-label">
+              <span class="setting-name">Enable Loot</span>
+              <span class="setting-desc">Enables item visualization in the world.</span>
+            </div>
+          </label>
+        </div>
+
+        <!-- Sub-header: CONFIGURATION -->
+        <div class="panel-section-header">
+          <div class="header-line"></div>
+          <h2 class="section-title">CONFIGURATION</h2>
+        </div>
+
+        <div class="settings-group">
+          <!-- Loot Lines Checkbox -->
+          <label class="checkbox-container">
+            <input type="checkbox" id="chk-loot-lines">
+            <span class="checkmark">
+              <svg class="check-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </span>
+            <div class="checkbox-label">
+              <span class="setting-name">Loot Lines</span>
+              <span class="setting-desc">Draws lines towards nearby items.</span>
+            </div>
+          </label>
+
+          <!-- Line Thickness Slider (Indented) -->
+          <div class="sub-options" id="loot-lines-options">
+            <div class="slider-container">
+              <div class="slider-label-row">
+                <span class="slider-title">Line Thickness</span>
+                <span class="slider-value" id="val-loot-line-thickness">2</span>
+              </div>
+              <span class="slider-desc">Thickness of the loot lines.</span>
+              <div class="slider-wrapper">
+                <input type="range" id="sld-loot-line-thickness" min="1" max="5" step="1" value="2">
+              </div>
+            </div>
+          </div>
+
+          <!-- Show Distance Checkbox -->
+          <label class="checkbox-container">
+            <input type="checkbox" id="chk-loot-show-distance">
+            <span class="checkmark">
+              <svg class="check-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </span>
+            <div class="checkbox-label">
+              <span class="setting-name">Show Distance</span>
+              <span class="setting-desc">Displays the distance to the item in feet.</span>
+            </div>
+          </label>
+
+          <!-- Font Size Slider (Indented) -->
+          <div class="sub-options" id="loot-distance-options">
+            <div class="slider-container">
+              <div class="slider-label-row">
+                <span class="slider-title">Font Size</span>
+                <span class="slider-value" id="val-loot-font-size">12</span>
+              </div>
+              <span class="slider-desc">Size of the item name and distance text.</span>
+              <div class="slider-wrapper">
+                <input type="range" id="sld-loot-font-size" min="6" max="24" step="1" value="12">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sub-header: COLORS -->
+        <div class="panel-section-header">
+          <div class="header-line"></div>
+          <h2 class="section-title">COLORS</h2>
+        </div>
+
+        <div class="settings-group">
+          <!-- Lines Color Picker -->
+          <div class="color-picker-container">
+            <div class="color-picker-label">
+              <span class="setting-name">Lines Color</span>
+              <span class="setting-desc">Color of the loot lines.</span>
+            </div>
+            <div class="color-picker-wrapper" id="color-wrapper-loot-lines">
+              <input type="color" id="col-loot-lines-color" value="#ffffff">
+            </div>
+          </div>
+
+          <!-- Text Color Picker -->
+          <div class="color-picker-container">
+            <div class="color-picker-label">
+              <span class="setting-name">Text Color</span>
+              <span class="setting-desc">Color of the item name and distance text.</span>
+            </div>
+            <div class="color-picker-wrapper" id="color-wrapper-loot-text">
+              <input type="color" id="col-loot-text-color" value="#fbbf24">
+            </div>
+          </div>
+        </div>
+
+        <!-- Sub-header: LOOT TYPES -->
+        <div class="panel-section-header">
+          <div class="header-line"></div>
+          <h2 class="section-title">LOOT TYPES</h2>
+        </div>
+
+        <div class="settings-group">
+          <!-- General Checkbox -->
+          <label class="checkbox-container">
+            <input type="checkbox" id="chk-loot-general">
+            <span class="checkmark">
+              <svg class="check-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </span>
+            <div class="checkbox-label">
+              <span class="setting-name">General</span>
+            </div>
+          </label>
+
+          <!-- Indented Sub-checkboxes under General -->
+          <div class="sub-options" id="loot-general-options">
+            <label class="checkbox-container">
+              <input type="checkbox" id="chk-loot-money">
+              <span class="checkmark"><svg class="check-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              <div class="checkbox-label"><span class="setting-name">Money</span></div>
+            </label>
+
+            <label class="checkbox-container">
+              <input type="checkbox" id="chk-loot-cash-register">
+              <span class="checkmark"><svg class="check-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              <div class="checkbox-label"><span class="setting-name">Cash Register</span></div>
+            </label>
+
+            <label class="checkbox-container">
+              <input type="checkbox" id="chk-loot-armor-plate">
+              <span class="checkmark"><svg class="check-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              <div class="checkbox-label"><span class="setting-name">Armor Plate</span></div>
+            </label>
+
+            <label class="checkbox-container">
+              <input type="checkbox" id="chk-loot-vest">
+              <span class="checkmark"><svg class="check-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              <div class="checkbox-label"><span class="setting-name">Vest</span></div>
+            </label>
+
+            <label class="checkbox-container">
+              <input type="checkbox" id="chk-loot-armor-vest">
+              <span class="checkmark"><svg class="check-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              <div class="checkbox-label"><span class="setting-name">Armor Vest</span></div>
+            </label>
+
+            <label class="checkbox-container">
+              <input type="checkbox" id="chk-loot-gas-mask">
+              <span class="checkmark"><svg class="check-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              <div class="checkbox-label"><span class="setting-name">Gas Mask</span></div>
+            </label>
+
+            <label class="checkbox-container">
+              <input type="checkbox" id="chk-loot-armor-box">
+              <span class="checkmark"><svg class="check-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              <div class="checkbox-label"><span class="setting-name">Armor Box</span></div>
+            </label>
+
+            <label class="checkbox-container">
+              <input type="checkbox" id="chk-loot-munition-box">
+              <span class="checkmark"><svg class="check-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              <div class="checkbox-label"><span class="setting-name">Munition Box</span></div>
+            </label>
+
+            <label class="checkbox-container">
+              <input type="checkbox" id="chk-loot-utility-box">
+              <span class="checkmark"><svg class="check-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              <div class="checkbox-label"><span class="setting-name">Utility Box</span></div>
+            </label>
+
+            <label class="checkbox-container">
+              <input type="checkbox" id="chk-loot-legendary-loot">
+              <span class="checkmark"><svg class="check-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              <div class="checkbox-label"><span class="setting-name">Legendary Loot</span></div>
+            </label>
+
+            <label class="checkbox-container">
+              <input type="checkbox" id="chk-loot-loot-box">
+              <span class="checkmark"><svg class="check-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              <div class="checkbox-label"><span class="setting-name">Loot Box</span></div>
+            </label>
+
+            <label class="checkbox-container">
+              <input type="checkbox" id="chk-loot-loot-bag">
+              <span class="checkmark"><svg class="check-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+              <div class="checkbox-label"><span class="setting-name">Loot (Bag)</span></div>
+            </label>
+          </div>
+        </div>
+      </section>
+
+      <section class="tab-content" id="tab-settings">
+        <!-- Sub-header: LANGUAGE -->
+        <div class="panel-section-header">
+          <div class="header-line"></div>
+          <h2 class="section-title">LANGUAGE</h2>
+        </div>
+
+        <div class="settings-group">
+          <div class="select-container">
+            <span class="select-title">Language</span>
+            <span class="select-desc">Select the interface language.</span>
+            <select id="sel-language" class="custom-select">
+              <option value="english" selected>English</option>
+              <option value="spanish">Español</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Sub-header: COLORS -->
+        <div class="panel-section-header">
+          <div class="header-line"></div>
+          <h2 class="section-title">COLORS</h2>
+        </div>
+
+        <div class="settings-group">
+          <!-- Accent Color Picker -->
+          <div class="color-picker-container">
+            <div class="color-picker-label">
+              <span class="setting-name">Accent Color</span>
+              <span class="setting-desc">Main accent color of the interface.</span>
+            </div>
+            <div class="color-picker-wrapper" id="color-wrapper-accent">
+              <input type="color" id="col-accent-color" value="#7c3aed">
+            </div>
+          </div>
+        </div>
+
+        <!-- Sub-header: PROFILES -->
+        <div class="panel-section-header">
+          <div class="header-line"></div>
+          <h2 class="section-title">PROFILES</h2>
+        </div>
+
+        <div class="settings-group">
+          <!-- Profiles container -->
+          <div class="profiles-list-box" id="profiles-container">
+            <span class="no-profiles-text" id="lbl-no-profiles">No profiles found.</span>
+          </div>
+
+          <!-- Save Current Profile Button -->
+          <button class="profile-action-btn save-btn" id="btn-save-profile">Save Current Profile</button>
+
+          <!-- Button Row -->
+          <div class="profile-buttons-row">
+            <button class="profile-action-btn new-btn" id="btn-new-profile">New</button>
+            <button class="profile-action-btn load-btn" id="btn-load-profile">Load</button>
+            <button class="profile-action-btn delete-btn" id="btn-delete-profile">Delete</button>
+          </div>
+        </div>
+
+        <!-- Sub-header: DIAGNOSTICS -->
+        <div class="panel-section-header">
+          <div class="header-line"></div>
+          <h2 class="section-title">DIAGNOSTICS</h2>
+        </div>
+
+        <div class="settings-group">
+          <div class="diagnostics-container">
+            <div class="diagnostic-item green-item">
+              <span class="diag-marker green-marker"></span>
+              <span class="diag-name">RENDER</span>
+              <span class="diag-value" id="diag-fps-value">2464 fps</span>
+            </div>
+            <div class="diagnostic-item green-item">
+              <span class="diag-marker green-marker"></span>
+              <span class="diag-name">CLIENT_INFO</span>
+              <span class="diag-value">0x1B097484040</span>
+            </div>
+            <div class="diagnostic-item red-item">
+              <span class="diag-marker red-marker"></span>
+              <span class="diag-name">CLIENT_ACTIVE</span>
+              <span class="diag-value">0x0</span>
+            </div>
+            <div class="diagnostic-item green-item">
+              <span class="diag-marker green-marker"></span>
+              <span class="diag-name">CLIENT_BASE</span>
+              <span class="diag-value">0x1B0F962AE80</span>
+            </div>
+            <div class="diagnostic-item green-item">
+              <span class="diag-marker green-marker"></span>
+              <span class="diag-name">BONE_BASE</span>
+              <span class="diag-value">0x1B54F5ECE00</span>
+            </div>
+            <div class="diagnostic-item green-item">
+              <span class="diag-marker green-marker"></span>
+              <span class="diag-name">NAME_ARRAY</span>
+              <span class="diag-value">0x1B55239F4D0</span>
+            </div>
+            <div class="diagnostic-item green-item">
+              <span class="diag-marker green-marker"></span>
+              <span class="diag-name">LOOT_BASE</span>
+              <span class="diag-value">0x1B60C510040</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Preview Panel (Right) -->
+    <aside class="preview-panel">
+      <div class="preview-header">
+        <span class="preview-title">PREVIEW</span>
+        <span class="preview-subtitle">VISUAL ENGINE CONFIGURATION</span>
+      </div>
+
+      <!-- Live Rendering Canvas Frame -->
+      <div class="canvas-viewport" id="viewport-container">
+        <!-- Render status banner top -->
+        <div class="hud-player-tag">
+          PLAYER <span class="tag-bold">[T:1]</span>
+        </div>
+        
+        <!-- Live HTML5 Canvas -->
+        <canvas id="canvas-preview"></canvas>
+      </div>
+
+      <div class="preview-footer">
+        <span class="status-marker"></span>
+        <span class="footer-status-text">ENGINE STATUS: <span class="status-active">ACTIVE RENDERING</span></span>
+      </div>
+    </aside>
+    
+  </div>
+
+  <!-- Notification Banner -->
+  <div id="toast-notification" class="toast">Configuration saved successfully!</div>
+
+  <script src="qrcode.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
