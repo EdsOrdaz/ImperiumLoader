@@ -310,8 +310,6 @@ function initEventListeners() {
       const contents = document.querySelectorAll('.tab-content');
       contents.forEach(c => c.classList.remove('active'));
       document.getElementById('tab-' + tabId).classList.add('active');
-      
-      showToast(`Tab changed to ${tabId.toUpperCase()}`);
     });
   });
 
@@ -904,16 +902,7 @@ function setThemeAccent(val) {
    ========================================================================== */
 let toastTimeout;
 function showToast(msg, isError = false) {
-  const toast = document.getElementById('toast-notification');
-  toast.innerText = msg;
-  toast.style.borderColor = isError ? '#f43f5e' : 'var(--accent-color)';
-  toast.style.boxShadow = isError ? '0 0 15px rgba(244,63,94,0.3)' : '0 0 15px var(--accent-glow)';
-  
-  toast.classList.add('show');
-  clearTimeout(toastTimeout);
-  toastTimeout = setTimeout(() => {
-    toast.classList.remove('show');
-  }, 2200);
+  // Completamente silenciado por requerimiento del usuario
 }
 
 /* ==========================================================================
